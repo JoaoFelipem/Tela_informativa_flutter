@@ -7,26 +7,26 @@ void main() {
 class TelaInformativa extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Cidades de Rondônia",
-            style:TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
-          centerTitle: true,
-          backgroundColor: Colors.blue,
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, 
-          children: [
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text(
+                "Cidades de Rondônia",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              centerTitle: true,
+              backgroundColor: Colors.blue,
+            ),
+            body:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               //Imagem
               Container(
                   width: double.infinity,
                   child: Flexible(
-                    child: Image.asset(
-                      'assets/images/jiparana.jpg',
-                      fit: BoxFit.contain,
-                      )
-                    ) 
-                  ),
+                      child: Image.asset(
+                    'assets/images/jiparana.jpg',
+                    fit: BoxFit.contain,
+                  ))),
 
               //País estado, cidade e estrelas
               Container(
@@ -49,19 +49,21 @@ class TelaInformativa extends StatelessWidget {
                           ],
                         ),
                       ),
-
+                      //Spacer(),
                       //Estrelas
                       Container(
-                        child: Row(
+                          child: Row(
                         children: [
                           Icon(Icons.star, color: Colors.blue),
+                          Icon(Icons.star, color: Colors.blue),
+                          Icon(Icons.star, color: Colors.blue),
+                          Icon(Icons.star, color: Colors.blue),
+                          Icon(Icons.star_half_sharp, color: Colors.blue),
                           Text("  3.500")
-                          ],
-                        )
-                      ),
+                        ],
+                      )),
                     ],
-                  )
-                ),
+                  )),
 
               //BOTÕES
               Container(
@@ -70,33 +72,69 @@ class TelaInformativa extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Column(children: [
-                        IconButton(
+                        TextButton(
+                          onPressed: () {},
+                          child: Column(
+                            children: [
+                              Icon(Icons.facebook, color: Colors.blue),
+                              SizedBox(height: 5),
+                              Text("Facebook",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black))
+                            ],
+                          ),
+                        )
+
+                        /*IconButton(
                             icon: Icon(Icons.phone, color: Colors.blue),
                             onPressed: () {}),
                         Text("Ligar",
-                            style: TextStyle(fontWeight: FontWeight.bold))
-                        ]
-                      ),
+                            style: TextStyle(fontWeight: FontWeight.bold))*/
+                      ]),
                       Column(children: [
-                        IconButton(
+                        TextButton(
+                          onPressed: () {},
+                          child: Column(
+                            children: [
+                              Icon(Icons.map, color: Colors.blue),
+                              SizedBox(height: 5),
+                              Text("Endereço",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black))
+                            ],
+                          ),
+                        )
+
+                        /*IconButton(
                             icon: Icon(Icons.map, color: Colors.blue),
                             onPressed: () {}),
                         Text("Endereço",
-                            style: TextStyle(fontWeight: FontWeight.bold))
-                        ]
-                      ),
-                      Column(
-                          children: [
-                            IconButton(
+                            style: TextStyle(fontWeight: FontWeight.bold))*/
+                      ]),
+                      Column(children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Column(
+                            children: [
+                              Icon(Icons.share, color: Colors.blue),
+                              SizedBox(height: 5),
+                              Text("Compartilhar",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black))
+                            ],
+                          ),
+                        )
+                        /*IconButton(
                                 icon: Icon(Icons.share, color: Colors.blue),
-                                onPressed: () {}),
+                                onPressed: () {}), 
                             Text("Compartilhar",
-                                style: TextStyle(fontWeight: FontWeight.bold))
-                          ]
-                      )
+                                style: TextStyle(fontWeight: FontWeight.bold))*/
+                      ])
                     ],
-                   )
-                  ),
+                  )),
 
               //Descrição
               Container(
@@ -104,9 +142,6 @@ class TelaInformativa extends StatelessWidget {
                   child: Text(
                       "Ji-Paraná é um município brasileiro do estado de Rondônia. Sua população, conforme estimativas do IBGE de 2021, era de 131 026 habitantes, sendo o segundo mais populoso do estado e o décimo sexto mais populoso da Região Norte do Brasil, a 237º mais populosa do Brasil e a 113ª mais populosa cidade do interior brasileiro.",
                       style: TextStyle(fontWeight: FontWeight.w600)))
-            ]
-                )
-              )
-            );
+            ])));
   }
 }
